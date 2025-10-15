@@ -1,26 +1,30 @@
-# CLAUDE.md - AI Assistant Guide
+# CLAUDE.md - AI Assistant Guide for Charlie's Wiki
 
-This document provides guidance for AI assistants (especially Claude) working with this personal learning blog.
+This document provides comprehensive guidance for AI assistants working on this personal wiki project.
 
 ---
 
 ## Project Overview
 
-### Primary Purpose
+### Purpose
 
-**Personal Learning Archive**: Record what I learn in TL;DR format so I can easily retrieve and review it later.
+This is a **Jekyll-based personal wiki** designed for systematic development learning management. It helps developers track their learning journey using a "도장깨기" (achievement stamps) approach - marking off completed learning items like collecting stamps.
 
-### Secondary Purpose
+### Target Audience
 
-**Daily Learning Tracker**: Track what I need to learn each day. When I encounter topics I don't fully understand, I create detailed blog posts to study them more deeply.
+Developers who want to:
+
+- Track their learning progress systematically
+- Build a knowledge base of technical topics
+- Maintain a portfolio of completed learning items
+- Create interconnected learning resources
 
 ### Core Philosophy
 
-- **Keep it Simple**: Make it easy to maintain daily consistency
-- **Quick Capture**: Record TL;DR summaries of daily learnings
-- **Deep Dives When Needed**: Create detailed posts only for topics requiring deeper understanding
-- **Easy Retrieval**: Organize content for quick searching and reviewing
-- **Daily Habit**: Design for sustainability - simple enough to do every day
+- **Progressive Learning**: Break down large topics into manageable items
+- **Visual Progress**: Use checkboxes to show completion status
+- **Interconnected Knowledge**: Link related posts together
+- **Documentation as Learning**: Writing about topics reinforces understanding
 
 ---
 
@@ -30,393 +34,567 @@ This document provides guidance for AI assistants (especially Claude) working wi
 
 - **Jekyll**: Static site generator
 - **Markdown**: Content format
-- **GitHub Pages**: Hosting
+- **Liquid**: Templating language
+- **JavaScript**: Client-side search
+- **CSS**: Custom styling with CSS variables
 
-### Content Types
+### Key Features
 
-1. **TL;DR Posts**: Quick summaries of daily learnings
-2. **Deep Dive Posts**: Detailed explanations of topics I want to master
-3. **Daily Logs**: Daily learning tracker with checkboxes
+1. **Category System**: Organize posts by major themes (Roadmap, Programming, Computer-Science)
+2. **Tag System**: Cross-reference posts by topics
+3. **Search**: Client-side search across all content
+4. **Roadmap Tracking**: Master progress tracker with checkboxes
+5. **Responsive Design**: Mobile-friendly layout
+6. **CV Integration**: Professional portfolio page
 
 ### Directory Structure
 
 ```
 .
-├── _posts/                 # All blog posts
-│   ├── YYYY-MM-DD-tldr-*.md        # TL;DR summaries
-│   ├── YYYY-MM-DD-deep-*.md        # Deep dive posts
-│   └── YYYY-MM-DD-daily-log-*.md   # Daily learning logs
-├── _config.yml             # Site configuration
-├── assets/                 # Images, CSS, JS
-└── pages/                  # Static pages (CV, tags, categories)
+├── _config.yml              # Site configuration
+├── _includes/               # Reusable HTML components
+│   ├── header.html         # Navigation + logo + search
+│   └── footer.html         # Footer content
+├── _layouts/               # Page templates
+│   ├── default.html        # Base layout
+│   ├── post.html          # Blog post layout
+│   ├── tag_page.html      # Tag listing layout
+│   ├── category_page.html # Category listing layout
+│   └── cv.html            # CV page layout
+├── _plugins/               # Custom Jekyll plugins
+│   ├── tag_generator.rb   # Auto-generate tag pages
+│   └── category_generator.rb  # Auto-generate category pages
+├── _posts/                 # All learning posts (Markdown)
+│   ├── YYYY-MM-DD-*.md
+├── assets/                 # Static files
+│   ├── css/style.css      # Main stylesheet
+│   ├── js/search.js       # Search functionality
+│   └── images/            # Images and logos
+├── pages/                  # Fixed pages
+│   ├── cv.md              # Curriculum Vitae
+│   ├── tags.md            # All tags listing
+│   └── categories.md      # All categories listing
+└── index.html             # Home page
 ```
+
+---
+
+## Understanding Sample Posts
+
+The `_posts/` directory contains three sample posts that demonstrate the wiki's structure:
+
+### 1. Roadmap Post: `2025-10-10-backend-roadmap.md`
+
+**Category:** `Roadmap`
+**Purpose:** Master learning tracker for backend development
+
+**Structure:**
+
+```markdown
+---
+layout: post
+title: "백엔드 개발자 로드맵: 도장깨기"
+date: 2025-10-10
+categories: Roadmap
+tags: [roadmap, backend, learning]
+published: true
+---
+
+## 1. 프로그래밍 언어 (Programming Language)
+
+- [x] Python - [[Python 기본 문법 정리](/2025/10/11/python-basics.html)]
+- [ ] Java
+- [ ] Go
+
+## 2. 자료구조 & 알고리즘
+
+- [x] 스택 (Stack) - [[스택의 이해와 구현](/2025/10/12/data-structure-stack.html)]
+- [ ] 큐 (Queue)
+- [ ] 트리 (Tree)
+
+## 진행 상황
+
+현재 완료한 항목: **2개**
+전체 항목: **약 50개**
+진행률: **4%**
+```
+
+**Key Features:**
+
+- **Checkbox tracking**: `[x]` = completed, `[ ]` = pending
+- **Linked learning**: Each completed item links to its detailed post
+- **Progress statistics**: Shows completion percentage
+- **Organized by topics**: Groups related skills together
+
+**When to Update:**
+
+- Check off items when you complete learning them
+- Add links to newly created detailed posts
+- Update progress statistics
+- Add new topics as needed
+
+### 2. Programming Post: `2025-10-11-python-basics.md`
+
+**Category:** `Programming`
+**Purpose:** Detailed programming language tutorial
+
+**Structure:**
+
+- **Introduction**: What is Python and why learn it
+- **Core Concepts**: Variables, data types, control flow, functions
+- **Code Examples**: Practical, runnable code snippets
+- **Best Practices**: Pythonic patterns
+- **Next Steps**: Links to advanced topics
+
+**Content Pattern:**
+
+1. Concept explanation
+2. Syntax examples
+3. Practical use cases
+4. Common patterns
+5. "다음 학습" (Next Learning) section
+
+### 3. Computer Science Post: `2025-10-12-data-structure-stack.md`
+
+**Category:** `Computer-Science`
+**Purpose:** In-depth technical concept deep-dive
+
+**Structure:**
+
+- **Concept Definition**: What is a Stack?
+- **Operations**: Core functionality (push, pop, peek, etc.)
+- **Implementation**: Complete Python implementation
+- **Time Complexity**: Performance analysis
+- **Use Cases**: Real-world applications
+- **Practice Problems**: Example implementations
+
+**Educational Value:**
+
+- Theory + Practice combination
+- Complete working code
+- Multiple examples
+- Connections to real-world usage
 
 ---
 
 ## Content Categories
 
-### TL;DR (Quick Learning Summaries)
+### Roadmap
 
-**Purpose**: Quick daily notes on what I learned
+**Purpose:** Central progress tracking for learning journeys
 
-**Characteristics**:
-- Short and concise (200-500 words max)
-- Bullet points preferred
-- Key takeaways only
-- Easy to scan and review
+**Characteristics:**
 
-**Example Topics**:
-- "TL;DR: Learned about Python decorators today"
-- "TL;DR: Git rebase vs merge differences"
-- "TL;DR: REST API best practices"
+- High-level overview of skill areas
+- Checkbox-based progress tracking
+- Links to detailed learning posts
+- Progress statistics
+- Long-term tracking document
 
-**Template**:
-```markdown
----
-layout: post
-title: "TL;DR: [Topic Name]"
-date: YYYY-MM-DD
-categories: TL;DR
-tags: [tag1, tag2]
-published: true
----
+**Best Practices:**
 
-## What I Learned
+- One roadmap per major skill area (e.g., Backend, Frontend, DevOps)
+- Update regularly as you complete items
+- Keep progress statistics current
+- Use clear topic groupings
 
-- Key point 1
-- Key point 2
-- Key point 3
+**Example Topics:**
 
-## Quick Summary
+- Backend Developer Roadmap
+- Frontend Developer Roadmap
+- Data Science Roadmap
+- DevOps Engineer Roadmap
 
-One-sentence summary of the main takeaway.
+### Programming
 
-## Reference
+**Purpose:** Programming language fundamentals and patterns
 
-- [Link to resource if applicable]
-```
+**Characteristics:**
 
-### Deep-Dive (Detailed Study Posts)
-
-**Purpose**: In-depth exploration of topics I don't fully understand
-
-**Characteristics**:
-- Comprehensive explanation
+- Language-specific content
+- Syntax and idioms
 - Code examples
-- My own understanding in my own words
-- Problem-solving approach
+- Best practices
+- Practical exercises
 
-**When to Create**:
-- When I encounter something confusing
-- When I want to master a concept
-- When TL;DR isn't enough
+**Typical Content:**
 
-**Template**:
-```markdown
----
-layout: post
-title: "[Topic]: Deep Dive"
-date: YYYY-MM-DD
-categories: Deep-Dive
-tags: [tag1, tag2]
-published: true
----
+- Language basics (Python, JavaScript, Java, Go)
+- Framework tutorials (Django, React, Spring)
+- Design patterns
+- Code quality practices
 
-## Why I'm Learning This
+### Computer-Science
 
-Brief explanation of why this topic matters to me.
+**Purpose:** Fundamental CS concepts and theory
 
-## The Problem / Question
+**Characteristics:**
 
-What confused me or what I want to understand.
+- Timeless concepts
+- Implementation + analysis
+- Algorithm complexity
+- Mathematical foundations
+- Problem-solving techniques
 
-## My Understanding
+**Typical Content:**
 
-Detailed explanation in my own words.
-
-## Code Examples
-
-Practical examples with comments.
-
-## Key Takeaways
-
-- Main point 1
-- Main point 2
-
-## References
-
-- Links to resources I used
-```
-
-### Daily-Log (Learning Tracker)
-
-**Purpose**: Track daily learning goals and progress
-
-**Characteristics**:
-- Checkbox format
-- Daily or weekly posts
-- Simple tracking mechanism
-- Motivational progress view
-
-**Template**:
-```markdown
----
-layout: post
-title: "Daily Log: [Date/Week]"
-date: YYYY-MM-DD
-categories: Daily-Log
-tags: [daily, learning]
-published: true
----
-
-## Today's Learning Goals
-
-- [ ] Topic 1
-- [ ] Topic 2
-- [ ] Topic 3
-
-## Completed
-
-- [x] Yesterday's topic - [Link to TL;DR or Deep Dive if created]
-
-## Notes
-
-Quick thoughts or reflections.
-```
+- Data structures (Stack, Queue, Tree, Graph)
+- Algorithms (sorting, searching, dynamic programming)
+- System design concepts
+- Computer architecture
+- Operating systems concepts
 
 ---
 
-## Writing Guidelines
+## Writing New Posts
 
 ### Post Naming Convention
 
 ```
-YYYY-MM-DD-category-topic.md
+YYYY-MM-DD-topic-name.md
 ```
 
-**Examples**:
-- `2025-10-14-tldr-python-decorators.md`
-- `2025-10-14-deep-dive-async-await.md`
-- `2025-10-14-daily-log-week-42.md`
+**Examples:**
 
-### Front Matter (Required)
+- `2025-10-15-python-decorators.md`
+- `2025-10-16-react-hooks-guide.md`
+- `2025-10-17-binary-search-tree.md`
+
+### Front Matter Template
 
 ```markdown
 ---
 layout: post
-title: "Your Title Here"
+title: "Your Post Title"
 date: YYYY-MM-DD
-categories: [TL;DR|Deep-Dive|Daily-Log]
+categories: [Roadmap|Programming|Computer-Science]
 tags: [tag1, tag2, tag3]
 published: true
 ---
 ```
 
-**Important**:
-- `date`: Always use today's actual date (not future dates)
-- `categories`: Choose ONE: `TL;DR`, `Deep-Dive`, or `Daily-Log`
-- `tags`: Keep it simple, 2-5 tags max
-- `published`: Always set to `true` for visible posts
+**Important Notes:**
 
-### Content Language
+- `layout`: Always use `post` for content posts
+- `title`: Post title (use quotes if it contains special characters)
+- `date`: Must be in YYYY-MM-DD format and match the filename date
+  - **Always use today's actual date** (not future dates)
+  - Jekyll hides future-dated posts by default
+  - Example: If today is 2025-10-12, use `date: 2025-10-12`
+- `categories`: Use singular form, choose one primary category
+- `tags`: Use array format with square brackets
+- `published`: Controls post visibility
+  - `true` = Post appears on the site (default for all published content)
+  - `false` = Draft post, hidden from builds
+  - **Always include this field** when creating or updating posts
+- Multi-word categories: Use hyphens (e.g., `Computer-Science` not `Computer Space`)
 
-- **Primary**: English (as requested)
-- Use clear, simple language
-- Technical terms in English
-- Code comments in English
+### Content Structure Template
+
+````markdown
+---
+layout: post
+title: "Topic Name: Subtitle"
+date: YYYY-MM-DD
+categories: Category-Name
+tags: [tag1, tag2, tag3]
+published: true
+---
+
+## Topic Introduction
+
+Brief overview of what this post covers and why it's important.
+
+---
+
+## Main Section 1
+
+### Subsection
+
+Content with examples...
+
+```code
+// Code examples
+```
+
+---
+
+## Main Section 2
+
+More detailed content...
+
+---
+
+## Practical Examples
+
+### Example 1
+
+Real-world use case...
+
+---
+
+## Summary
+
+Key takeaways from this post.
+
+### Next Learning
+
+- [Related Topic 1]
+- [Related Topic 2]
+- [Advanced Topic]
+````
+
+### Cross-Linking Posts
+
+**Internal Links Format:**
+
+```markdown
+[Link Text](/YYYY/MM/DD/post-title.html)
+```
+
+**Example:**
+
+```markdown
+Learn more about [Python Basics](/2025/10/11/python-basics.html)
+```
+
+**When to Link:**
+
+- From roadmap to detailed posts
+- Between related topics
+- From basic to advanced concepts
+- In "Next Learning" sections
 
 ---
 
 ## AI Assistant Workflow
 
-### When I Say: "Log today's learning"
+### When Adding New Learning Posts
 
-1. Create a **TL;DR post** with today's date
-2. Use bullet points for quick notes
-3. Keep it under 500 words
-4. Ask me for the main points to include
+1. **Create the post** with proper naming and front matter
+   - Include all required fields: `layout`, `title`, `date`, `categories`, `tags`, `published`
+   - Set `published: true` for posts ready to be displayed
+2. **Update related roadmap** if applicable:
+   ```markdown
+   - [x] New Topic - [[Link to new post](/YYYY/MM/DD/new-post.html)]
+   ```
+3. **Update progress statistics** in roadmap
+4. **Add cross-references** in related posts
+5. **Verify categories and tags** are consistent
 
-### When I Say: "I want to deep dive into [topic]"
+### When Updating Roadmaps
 
-1. Create a **Deep-Dive post**
-2. Structure it with problem → understanding → examples
-3. Include code examples if applicable
-4. Ask clarifying questions about what confused me
+1. **Find completed items** that have associated posts
+2. **Change checkbox**: `[ ]` → `[x]`
+3. **Add link**: `[[Title](/YYYY/MM/DD/post.html)]`
+4. **Recalculate progress**:
+   ```markdown
+   현재 완료한 항목: **X개**
+   전체 항목: **Y개**
+   진행률: **Z%**
+   ```
 
-### When I Say: "Create my daily log"
+### Maintaining Consistency
 
-1. Create or update **Daily-Log post**
-2. List learning goals for today
-3. Link completed items to their TL;DR/Deep-Dive posts
-4. Keep the format simple with checkboxes
+**Categories:**
 
-### General Principles
+- Use existing categories when possible
+- New categories should be broad themes
+- Avoid too many categories (keep it manageable)
 
-**Keep It Simple**:
-- Don't overcomplicate structure
-- Focus on content, not formatting
-- Make it easy for daily use
+**Tags:**
 
-**Be Consistent**:
-- Use the same templates
-- Follow naming conventions
-- Maintain tag consistency
+- Use existing tags for consistency
+- Create new tags only when needed
+- Use CamelCase for multi-word tags (e.g., `DataStructure`)
+- Keep tags specific and meaningful
 
-**Support Daily Habit**:
-- Quick post creation (< 5 minutes)
-- Easy updates
-- Minimal friction
+**Formatting:**
 
----
-
-## Common AI Assistant Tasks
-
-### Creating a TL;DR Post
-
-```
-User: "Log what I learned about Docker containers today"
-
-AI Should:
-1. Create: 2025-10-14-tldr-docker-containers.md
-2. Use TL;DR template
-3. Ask: "What are the key points you want to record?"
-4. Keep it brief and scannable
-```
-
-### Creating a Deep-Dive Post
-
-```
-User: "I want to understand async/await better"
-
-AI Should:
-1. Create: 2025-10-14-deep-dive-async-await.md
-2. Use Deep-Dive template
-3. Ask: "What specifically confused you about async/await?"
-4. Structure comprehensive explanation
-```
-
-### Updating Daily Log
-
-```
-User: "Update my daily log"
-
-AI Should:
-1. Find today's or this week's daily-log post
-2. Mark completed items with [x]
-3. Add links to any new TL;DR or Deep-Dive posts created
-4. Ask if there are new goals to add
-```
+- Use Korean for main content (target audience is Korean)
+- Use English for code, technical terms, and proper nouns
+- Keep code examples well-commented
+- Use consistent heading hierarchy
 
 ---
 
-## Best Practices for AI Assistants
+## Key Features to Maintain
+
+### 1. Quick Links (바로가기)
+
+**Location:** Home page (index.html)
+**Cards:**
+
+- 📚 태그 (Tags)
+- 🗂️ 카테고리 (Categories)
+- 👤 CV
+
+**Purpose:** Fast navigation to main sections
+
+### 2. Search Functionality
+
+**Location:** Header on all pages
+**Features:**
+
+- Real-time client-side search
+- Searches title, content, and tags
+- Results with highlights
+- No server required (static site)
+
+### 3. Logo and Branding
+
+**Logo:** `assets/images/logo/orchwang.png`
+**Locations:**
+
+- Header (all pages): 50px height
+- CV page: 100px width, centered
+- Favicon: Multiple sizes for browsers
+
+**Maintain:** Consistent branding across all pages
+
+### 4. Navigation Menu
+
+**Order:** 홈 | 카테고리 | 태그 | CV
+**Keep:** Same order in header and quick links
+
+### 5. Responsive Design
+
+- Mobile-friendly layouts
+- Logo scales down on mobile
+- Navigation adapts for small screens
+- Touch-friendly buttons and links
+
+---
+
+## Best Practices
+
+### For Roadmap Management
+
+1. **Start broad, get specific**: Main topics → subtopics → detailed items
+2. **Link everything**: Every checked item should link to a learning post
+3. **Update regularly**: Review and check off items as you learn
+4. **Track progress**: Keep statistics current for motivation
+5. **One roadmap per domain**: Don't mix unrelated topics
+
+### For Technical Posts
+
+1. **Start with why**: Explain importance before diving into details
+2. **Show, don't just tell**: Include working code examples
+3. **Multiple examples**: Show different use cases
+4. **Explain complexity**: Include time/space complexity for algorithms
+5. **Link to next steps**: Guide readers to related topics
+
+### For Knowledge Management
+
+1. **Write as you learn**: Don't wait until you're an expert
+2. **Link related content**: Build a web of knowledge
+3. **Update old posts**: Improve clarity based on new understanding
+4. **Use consistent formatting**: Makes content easier to navigate
+5. **Tag thoughtfully**: Makes content discoverable
+
+---
+
+## Common Tasks
+
+### Adding a New Learning Post
+
+```bash
+# Use the custom command
+/add-post "Python Decorators" Programming "Python,Programming,Advanced"
+```
+
+This creates:
+
+- Properly named file in `_posts/`
+- Correct front matter
+- Basic content template
+
+### Checking Site Locally
+
+```bash
+# Start Jekyll server
+make serve
+
+# Access at http://localhost:4000
+```
+
+### Finding Content
+
+- **By category:** Visit `/pages/categories.html`
+- **By tag:** Visit `/pages/tags.html`
+- **By search:** Use search box in header
+
+---
+
+## Current State Summary
+
+### Existing Content
+
+- **3 sample posts** demonstrating the wiki structure
+- **1 roadmap** (Backend Developer) with 50 items, 2 completed
+- **2 detailed posts** (Python Basics, Stack Data Structure)
+
+### Categories
+
+- **Roadmap**: Learning journey trackers
+- **Programming**: Language and framework tutorials
+- **Computer-Science**: CS fundamentals
+
+### Tags in Use
+
+- `roadmap`, `backend`, `learning`
+- `Python`, `Programming`, `Basics`
+- `DataStructure`, `Algorithm`, `CS`, `Stack`
+
+### Site Features
+
+- ✅ Category pages with auto-generation
+- ✅ Tag pages with auto-generation
+- ✅ Client-side search
+- ✅ CV/portfolio page
+- ✅ Logo and favicon
+- ✅ Responsive design
+- ✅ Quick links on home page
+
+---
+
+## Guidelines for AI Assistants
 
 ### Do's
 
-✅ Keep posts simple and focused
-✅ Use templates consistently
-✅ Ask clarifying questions when needed
-✅ Link related posts together
-✅ Use today's actual date (never future dates)
-✅ Prioritize quick capture over perfect formatting
-✅ Support daily consistency habit
-✅ Keep TL;DR posts brief (under 500 words)
+- ✅ Update roadmap checkboxes when completing topics
+- ✅ Cross-link related posts
+- ✅ Keep progress statistics current
+- ✅ Use consistent categories and tags
+- ✅ Always include `published: true` in post front matter
+- ✅ Write clear, educational content
+- ✅ Include practical code examples
+- ✅ Add "Next Learning" sections
+- ✅ Maintain responsive design
+- ✅ Follow established naming conventions
 
 ### Don'ts
 
-❌ Don't make posts unnecessarily complex
-❌ Don't create new categories without asking
-❌ Don't skip the front matter
-❌ Don't use future dates
-❌ Don't make TL;DR posts too long
-❌ Don't add unnecessary formatting
-❌ Don't break the simple workflow
-
----
-
-## Quick Reference
-
-### Three Main Post Types
-
-1. **TL;DR**: Daily quick learning notes (200-500 words)
-2. **Deep-Dive**: Detailed study when needed (1000+ words)
-3. **Daily-Log**: Learning goals tracker (checkbox format)
-
-### Typical Daily Workflow
-
-```
-Morning:
-- Create/update daily log with today's goals
-
-During the day:
-- Learn things
-
-Evening:
-- Create TL;DR posts for what I learned
-- Check off completed items in daily log
-- Create Deep-Dive post if something needs deeper study
-```
-
-### File Naming Pattern
-
-```
-2025-10-14-tldr-topic-name.md
-2025-10-14-deep-dive-topic-name.md
-2025-10-14-daily-log-week-42.md
-```
-
----
-
-## Tips for Using Gemini API
-
-### When Helping Me Create Content
-
-**Ask Short Questions**:
-- "What are the 3 main things you learned?"
-- "What confused you about this topic?"
-- "Should this be a TL;DR or Deep-Dive?"
-
-**Keep Responses Actionable**:
-- Provide ready-to-use markdown
-- Include proper front matter
-- Follow templates exactly
-
-**Support My Habit**:
-- Make it quick (< 5 min to create a post)
-- Reduce decision fatigue
-- Encourage daily consistency
-
-### Content Generation Tips
-
-**For TL;DR**:
-- Focus on key takeaways only
-- Use bullet points
-- Keep it scannable
-- Don't explain everything
-
-**For Deep-Dive**:
-- Start with the problem/question
-- Explain in simple terms
-- Include practical examples
-- Add code when relevant
-
-**For Daily-Log**:
-- Simple checkbox list
-- Link to completed posts
-- Track progress visibly
-- Keep it motivating
+- ❌ Create new categories unnecessarily
+- ❌ Skip front matter in posts
+- ❌ Break existing links when renaming
+- ❌ Mix multiple categories per post
+- ❌ Use spaces in category names (use hyphens)
+- ❌ Ignore cross-referencing opportunities
+- ❌ Leave roadmaps outdated
+- ❌ Create posts without linking to roadmap
 
 ---
 
 ## Project Goals
 
-This blog aims to be:
+This wiki aims to be:
 
-1. **Daily Learning Companion**: Support consistent learning habit
-2. **Personal Knowledge Base**: Easy to search and review
-3. **Progress Tracker**: Visual motivation through daily logs
-4. **Low Friction**: Simple enough to maintain every day
-5. **Flexible**: TL;DR for quick notes, Deep-Dive when needed
+1. **Comprehensive**: Cover all essential topics for target skill area
+2. **Interconnected**: All posts link to related content
+3. **Progressive**: Clear learning path from basics to advanced
+4. **Maintainable**: Easy to update and extend
+5. **Motivating**: Visual progress tracking encourages continued learning
 
 ---
 
@@ -424,24 +602,27 @@ This blog aims to be:
 
 This guide reflects the project structure as of October 2025.
 
-**Current Focus**:
-- Keep it simple for daily use
-- TL;DR posts for quick learning capture
-- Deep-Dive posts for topics requiring more study
-- Daily logs for tracking progress
+**Current Status:**
 
-**Remember**: The goal is consistency over perfection. Make it easy for me to maintain daily.
+- Jekyll wiki fully implemented
+- Category system operational
+- Tag system operational
+- 3 sample posts demonstrating structure
+- Logo and branding applied
+- Search functionality working
+- CV page integrated
+
+**Next Steps:**
+
+- Continue adding learning posts
+- Update roadmap progress
+- Build knowledge connections
+- Maintain consistent quality
 
 ---
 
-## For AI Assistants Using This Guide
+For questions or clarifications about this project, refer to:
 
-**Your Primary Role**: Help me maintain a simple, consistent daily learning habit.
-
-**Key Principles**:
-1. Speed over perfection
-2. Simple over complex
-3. Consistent over creative
-4. Supportive over prescriptive
-
-**When in doubt**: Ask me what I prefer, don't guess.
+- `specs/blueprint.spec.md` - Original design specification
+- `README.md` - Setup and usage instructions
+- Sample posts in `_posts/` - Content examples
