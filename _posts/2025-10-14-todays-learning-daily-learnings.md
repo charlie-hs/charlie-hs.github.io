@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "TL;DR: 14th October, progress to make sure the concepts what I'm not sure to know absolutely"
+title: "Today's learning: 14th October, progress to make sure the concepts what I'm not sure to know absolutely"
 date: 2025-10-14
-categories: TL;DR
+categories: "Today's learning"
 tags: [learning, tech, concepts]
 published: true
 ---

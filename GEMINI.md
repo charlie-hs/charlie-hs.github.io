@@ -8,7 +8,7 @@ This document provides guidance for AI assistants (especially Gemini) working wi
 
 ### Primary Purpose
 
-**Personal Learning Archive**: Record what I learn in TL;DR format so I can easily retrieve and review it later.
+**Personal Learning Archive**: Record what I learn in Today's learning format so I can easily retrieve and review it later.
 
 ### Secondary Purpose
 
@@ -17,7 +17,7 @@ This document provides guidance for AI assistants (especially Gemini) working wi
 ### Core Philosophy
 
 - **Keep it Simple**: Make it easy to maintain daily consistency
-- **Quick Capture**: Record TL;DR summaries of daily learnings
+- **Quick Capture**: Record Today's learning summaries of daily learnings
 - **Deep Dives When Needed**: Create detailed posts only for topics requiring deeper understanding
 - **Easy Retrieval**: Organize content for quick searching and reviewing
 - **Daily Habit**: Design for sustainability - simple enough to do every day
@@ -34,7 +34,7 @@ This document provides guidance for AI assistants (especially Gemini) working wi
 
 ### Content Types
 
-1. **TL;DR Posts**: Quick summaries of daily learnings
+1. **Today's learning Posts**: Quick summaries of daily learnings
 2. **Deep Dive Posts**: Detailed explanations of topics I want to master
 3. **Daily Logs**: Daily learning tracker with checkboxes
 
@@ -43,7 +43,7 @@ This document provides guidance for AI assistants (especially Gemini) working wi
 ```
 .
 ├── _posts/                 # All blog posts
-│   ├── YYYY-MM-DD-tldr-*.md        # TL;DR summaries
+│   ├── YYYY-MM-DD-todays-learning-*.md        # Today's learning summaries
 │   ├── YYYY-MM-DD-deep-*.md        # Deep dive posts
 │   └── YYYY-MM-DD-daily-log-*.md   # Daily learning logs
 ├── _config.yml             # Site configuration
@@ -55,7 +55,7 @@ This document provides guidance for AI assistants (especially Gemini) working wi
 
 ## Content Categories
 
-### TL;DR (Quick Learning Summaries)
+### Today's learning (Quick Learning Summaries)
 
 **Purpose**: Quick daily notes on what I learned
 
@@ -66,17 +66,17 @@ This document provides guidance for AI assistants (especially Gemini) working wi
 - Easy to scan and review
 
 **Example Topics**:
-- "TL;DR: Learned about Python decorators today"
-- "TL;DR: Git rebase vs merge differences"
-- "TL;DR: REST API best practices"
+- "Today's learning: Learned about Python decorators today"
+- "Today's learning: Git rebase vs merge differences"
+- "Today's learning: REST API best practices"
 
 **Template**:
 ```markdown
 ---
 layout: post
-title: "TL;DR: [Topic Name]"
+title: "Today's learning: [Topic Name]"
 date: YYYY-MM-DD
-categories: TL;DR
+categories: "Today's learning"
 tags: [tag1, tag2]
 published: true
 ---
@@ -109,7 +109,7 @@ One-sentence summary of the main takeaway.
 **When to Create**:
 - When I encounter something confusing
 - When I want to master a concept
-- When TL;DR isn't enough
+- When Today's learning isn't enough
 
 **Template**:
 ```markdown
@@ -177,7 +177,7 @@ published: true
 
 ## Completed
 
-- [x] Yesterday's topic - [Link to TL;DR or Deep Dive if created]
+- [x] Yesterday's topic - [Link to Today's learning or Deep Dive if created]
 
 ## Notes
 
@@ -195,7 +195,7 @@ YYYY-MM-DD-category-topic.md
 ```
 
 **Examples**:
-- `2025-10-14-tldr-python-decorators.md`
+- `2025-10-14-todays-learning-python-decorators.md`
 - `2025-10-14-deep-dive-async-await.md`
 - `2025-10-14-daily-log-week-42.md`
 
@@ -206,7 +206,7 @@ YYYY-MM-DD-category-topic.md
 layout: post
 title: "Your Title Here"
 date: YYYY-MM-DD
-categories: [TL;DR|Deep-Dive|Daily-Log]
+categories: ["Today's learning"|Deep-Dive|Daily-Log]
 tags: [tag1, tag2, tag3]
 published: true
 ---
@@ -214,7 +214,7 @@ published: true
 
 **Important**:
 - `date`: Always use today's actual date (not future dates)
-- `categories`: Choose ONE: `TL;DR`, `Deep-Dive`, or `Daily-Log`
+- `categories`: Choose ONE: `Today's learning`, `Deep-Dive`, or `Daily-Log`
 - `tags`: Keep it simple, 2-5 tags max
 - `published`: Always set to `true` for visible posts
 
@@ -231,7 +231,7 @@ published: true
 
 ### When I Say: "Log today's learning"
 
-1. Create a **TL;DR post** with today's date
+1. Create a **Today's learning post** with today's date
 2. Use bullet points for quick notes
 3. Keep it under 500 words
 4. Ask me for the main points to include
@@ -247,7 +247,7 @@ published: true
 
 1. Create or update **Daily-Log post**
 2. List learning goals for today
-3. Link completed items to their TL;DR/Deep-Dive posts
+3. Link completed items to their Today's learning/Deep-Dive posts
 4. Keep the format simple with checkboxes
 
 ### General Principles
@@ -271,14 +271,14 @@ published: true
 
 ## Common AI Assistant Tasks
 
-### Creating a TL;DR Post
+### Creating a Today's learning Post
 
 ```
 User: "Log what I learned about Docker containers today"
 
 AI Should:
-1. Create: 2025-10-14-tldr-docker-containers.md
-2. Use TL;DR template
+1. Create: 2025-10-14-todays-learning-docker-containers.md
+2. Use Today's learning template
 3. Ask: "What are the key points you want to record?"
 4. Keep it brief and scannable
 ```
@@ -303,7 +303,7 @@ User: "Update my daily log"
 AI Should:
 1. Find today's or this week's daily-log post
 2. Mark completed items with [x]
-3. Add links to any new TL;DR or Deep-Dive posts created
+3. Add links to any new Today's learning or Deep-Dive posts created
 4. Ask if there are new goals to add
 ```
 
@@ -320,7 +320,7 @@ AI Should:
 ✅ Use today's actual date (never future dates)
 ✅ Prioritize quick capture over perfect formatting
 ✅ Support daily consistency habit
-✅ Keep TL;DR posts brief (under 500 words)
+✅ Keep Today's learning posts brief (under 500 words)
 
 ### Don'ts
 
@@ -328,7 +328,7 @@ AI Should:
 ❌ Don't create new categories without asking
 ❌ Don't skip the front matter
 ❌ Don't use future dates
-❌ Don't make TL;DR posts too long
+❌ Don't make Today's learning posts too long
 ❌ Don't add unnecessary formatting
 ❌ Don't break the simple workflow
 
@@ -338,7 +338,7 @@ AI Should:
 
 ### Three Main Post Types
 
-1. **TL;DR**: Daily quick learning notes (200-500 words)
+1. **Today's learning**: Daily quick learning notes (200-500 words)
 2. **Deep-Dive**: Detailed study when needed (1000+ words)
 3. **Daily-Log**: Learning goals tracker (checkbox format)
 
@@ -352,7 +352,7 @@ During the day:
 - Learn things
 
 Evening:
-- Create TL;DR posts for what I learned
+- Create Today's learning posts for what I learned
 - Check off completed items in daily log
 - Create Deep-Dive post if something needs deeper study
 ```
@@ -360,7 +360,7 @@ Evening:
 ### File Naming Pattern
 
 ```
-2025-10-14-tldr-topic-name.md
+2025-10-14-todays-learning-topic-name.md
 2025-10-14-deep-dive-topic-name.md
 2025-10-14-daily-log-week-42.md
 ```
@@ -374,7 +374,7 @@ Evening:
 **Ask Short Questions**:
 - "What are the 3 main things you learned?"
 - "What confused you about this topic?"
-- "Should this be a TL;DR or Deep-Dive?"
+- "Should this be a Today's learning or Deep-Dive?"
 
 **Keep Responses Actionable**:
 - Provide ready-to-use markdown
@@ -388,7 +388,7 @@ Evening:
 
 ### Content Generation Tips
 
-**For TL;DR**:
+**For Today's learning**:
 - Focus on key takeaways only
 - Use bullet points
 - Keep it scannable
@@ -416,7 +416,7 @@ This blog aims to be:
 2. **Personal Knowledge Base**: Easy to search and review
 3. **Progress Tracker**: Visual motivation through daily logs
 4. **Low Friction**: Simple enough to maintain every day
-5. **Flexible**: TL;DR for quick notes, Deep-Dive when needed
+5. **Flexible**: Today's learning for quick notes, Deep-Dive when needed
 
 ---
 
@@ -426,7 +426,7 @@ This guide reflects the project structure as of October 2025.
 
 **Current Focus**:
 - Keep it simple for daily use
-- TL;DR posts for quick learning capture
+- Today's learning posts for quick learning capture
 - Deep-Dive posts for topics requiring more study
 - Daily logs for tracking progress
 
