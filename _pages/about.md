@@ -3,6 +3,22 @@ permalink: /about/
 title: "About"
 ---
 
-Tempor velit sint sunt ipsum tempor enim ad qui ullamco. Est dolore anim ad velit duis dolore minim sunt aliquip amet commodo labore. Ut eu pariatur aute ea aute excepteur laborum. Esse ea esse excepteur minim mollit qui cillum excepteur ex dolore magna. Labore deserunt fugiat incididunt incididunt sint ea. Consequat dolore aute laboris quis proident quis non et est consectetur ex eiusmod sit culpa.
+## 안녕하세요!
 
-Cupidatat ea do et in excepteur in. Ad nostrud ut est esse eu duis ea sunt eiusmod. Aliquip tempor veniam sint elit fugiat. Velit incididunt laboris amet incididunt labore dolore irure velit excepteur commodo deserunt laborum. Consectetur eu fugiat veniam veniam Lorem labore magna eiusmod. Ea occaecat reprehenderit pariatur consectetur minim labore ut aliquip.
+학점은행제를 통해 컴퓨터공학을 공부하면서, 동시에 실무에서 필요한 기술들을 학습하고 있는 개발자입니다.
+
+### 학습 분야
+
+- **학점은행제 컴퓨터공학**: 정규 교육과정 기반의 CS 기초
+- **데이터 엔지니어링**: 데이터 파이프라인, ETL, 빅데이터 처리
+- **인공지능 & 머신러닝**: ML/DL 알고리즘, 자연어처리, 컴퓨터비전
+- **백엔드 개발**: API 설계, 서버 개발, 데이터베이스
+
+### 블로그 목적
+
+이 블로그는 학습한 내용을 정리하고 공유하기 위한 공간입니다. 학습 과정에서 얻은 인사이트와 실습 경험을 기록하며, 같은 분야를 공부하는 분들과 지식을 나누고자 합니다.
+
+### 연락처
+
+- GitHub: [charlie-hs](https://github.com/charlie-hs)
+- Email: sbkhs274@gmail.com
