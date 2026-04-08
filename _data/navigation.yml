@@ -5,5 +5,22 @@ main:
     url: /categories/
   - title: "Tags"
     url: /tags/
+  - title: "Portfolio"
+    url: /portfolio/
   - title: "About"
     url: /about/
+
+# Sidebar navigation for categories
+sidebar-categories:
+  - title: "카테고리"
+    children:
+      - title: "네트워크"
+        url: /categories/network/
+      - title: "데이터 엔지니어링"
+        url: /categories/data-engineering/
+      - title: "AI & 머신러닝"
+        url: /categories/ai-ml/
+      - title: "백엔드 개발"
+        url: /categories/backend/
+      - title: "컴퓨터 과학"
+        url: /categories/computer-science/
