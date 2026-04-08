@@ -13,15 +13,35 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: "dev diary"
+title: "Charlie's Dev Diary"
+subtitle: "학점은행제 컴공 · 데이터엔지니어링 · AI · 백엔드"
 email: sbkhs274@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: >-
+  컴퓨터공학 학습 여정을 기록하는 개발 블로그입니다.
+  학점은행제 컴공, 데이터엔지니어링, 인공지능, 백엔드 개발 등
+  실무 중심의 기술 학습 내용을 공유합니다.
+url: "https://charlie-hs.github.io"
 github_username: charlie-hs
 minimal_mistakes_skin: default
 search: true
+locale: "ko-KR"
+
+# SEO Settings
+twitter:
+  username: ""
+og_image: /assets/images/site-og-image.png
+social:
+  type: Person
+  name: Hyeonsoo Kim
+  links:
+    - "https://github.com/charlie-hs"
+
+# Analytics (optional - uncomment to enable)
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "G-XXXXXXXXXX"
+#     anonymize_ip: false
 
 # Build settings
 markdown: kramdown
@@ -53,38 +73,28 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jekyll-seo-tag
   - jemoji
   - jekyll-include-cache
 
 author:
   name   : "Hyeonsoo Kim"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "학점은행제 컴공 학습 중 | 데이터엔지니어링 & AI에 관심 있는 개발자"
+  location: "South Korea"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/charlie-hs"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:sbkhs274@gmail.com"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/charlie-hs"
 
 defaults:
   # _posts

@@ -1,0 +1,68 @@
+<!-- AEO: JSON-LD Structured Data -->
+{% if page.layout == 'single' or page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.excerpt | strip_html | truncate: 160 | escape }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  },
+  "inLanguage": "ko-KR"
+  {% if page.categories %},
+  "articleSection": "{{ page.categories | join: ', ' }}"
+  {% endif %}
+  {% if page.tags %},
+  "keywords": "{{ page.tags | join: ', ' }}"
+  {% endif %}
+}
+</script>
+{% else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "description": "{{ site.description | escape }}",
+  "url": "{{ site.url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "inLanguage": "ko-KR",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.url }}/search/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endif %}
+
+<!-- Additional: Person schema for author -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "url": "{{ site.url }}",
+  "sameAs": [
+    "https://github.com/{{ site.github_username }}"
+  ],
+  "jobTitle": "Developer",
+  "knowsAbout": ["컴퓨터공학", "데이터엔지니어링", "인공지능", "백엔드개발"]
+}
+</script>
