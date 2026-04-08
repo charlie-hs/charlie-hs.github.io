@@ -4,7 +4,7 @@ title: "Today's learning: 14th October, progress to make sure the concepts what 
 date: 2025-10-14
 categories: "Today's learning"
 tags: [learning, tech, concepts]
-published: true
+published: false
 ---
 
 ## What I Learned
