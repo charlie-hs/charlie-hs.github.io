@@ -20,6 +20,8 @@ sidebar-categories:
         url: /categories/data-engineering/
       - title: "AI & 머신러닝"
         url: /categories/ai-ml/
+      - title: "AI Engineering"
+        url: /categories/ai-engineering/
       - title: "백엔드 개발"
         url: /categories/backend/
       - title: "컴퓨터 과학"
