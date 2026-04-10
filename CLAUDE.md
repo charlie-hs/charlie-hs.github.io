@@ -49,32 +49,36 @@ Developers who want to:
 
 ### Directory Structure
 
-```
-.
-├── _config.yml              # Site configuration
-├── _includes/               # Reusable HTML components
-│   ├── header.html         # Navigation + logo + search
-│   └── footer.html         # Footer content
-├── _layouts/               # Page templates
-│   ├── default.html        # Base layout
-│   ├── post.html          # Blog post layout
-│   ├── tag_page.html      # Tag listing layout
-│   ├── category_page.html # Category listing layout
-│   └── cv.html            # CV page layout
-├── _plugins/               # Custom Jekyll plugins
-│   ├── tag_generator.rb   # Auto-generate tag pages
-│   └── category_generator.rb  # Auto-generate category pages
-├── _posts/                 # All learning posts (Markdown)
-│   ├── YYYY-MM-DD-*.md
-├── assets/                 # Static files
-│   ├── css/style.css      # Main stylesheet
-│   ├── js/search.js       # Search functionality
-│   └── images/            # Images and logos
-├── pages/                  # Fixed pages
-│   ├── cv.md              # Curriculum Vitae
-│   ├── tags.md            # All tags listing
-│   └── categories.md      # All categories listing
-└── index.html             # Home page
+```mermaid
+graph TD
+    Root["."] --> Config["_config.yml<br/>Site configuration"]
+    Root --> Includes["_includes/<br/>Reusable HTML components"]
+    Root --> Layouts["_layouts/<br/>Page templates"]
+    Root --> Plugins["_plugins/<br/>Custom Jekyll plugins"]
+    Root --> Posts["_posts/<br/>Learning posts (Markdown)"]
+    Root --> Assets["assets/<br/>Static files"]
+    Root --> Pages["pages/<br/>Fixed pages"]
+    Root --> Index["index.html<br/>Home page"]
+
+    Includes --> Header["header.html"]
+    Includes --> Footer["footer.html"]
+
+    Layouts --> Default["default.html"]
+    Layouts --> PostLayout["post.html"]
+    Layouts --> TagPage["tag_page.html"]
+    Layouts --> CatPage["category_page.html"]
+    Layouts --> CvLayout["cv.html"]
+
+    Plugins --> TagGen["tag_generator.rb"]
+    Plugins --> CatGen["category_generator.rb"]
+
+    Assets --> CSS["css/style.css"]
+    Assets --> JS["js/search.js"]
+    Assets --> Images["images/"]
+
+    Pages --> CV["cv.md"]
+    Pages --> Tags["tags.md"]
+    Pages --> Categories["categories.md"]
 ```
 
 ---
@@ -289,6 +293,79 @@ published: true
   - **Always include this field** when creating or updating posts
 - Multi-word categories: Use hyphens (e.g., `Computer-Science` not `Computer Space`)
 
+### Writing Style Guide (블로그 톤 & 가독성)
+
+블로그 포스트는 **내가 직접 공부하고 정리한 느낌**이 나야 한다. 아래 규칙을 반드시 따른다.
+
+#### 톤 & 문체
+
+- **1인칭 서술**: "~해보겠습니다", "제가 이해한 바로는", "처음에는 헷갈렸는데" 등 직접 배운 사람의 시점
+- **자연스러운 한국어**: 딱딱한 교과서체 금지. 블로그 글처럼 편하게 쓰되, 핵심은 명확하게
+- **경험 기반 서술**: "이 개념은 실제로 ~할 때 유용합니다", "저도 처음에는 ~라고 생각했는데" 같은 표현 활용
+- **독백/회고 느낌**: 글 시작이나 중간에 "왜 이걸 공부하게 됐는지", "어디서 막혔는지" 짧게 언급
+
+#### Step by Step 설명 (필수)
+
+개념을 설명할 때는 **반드시 단계별로** 풀어서 설명한다:
+
+```markdown
+## 동작 원리
+
+### Step 1: 요청 수신
+클라이언트가 HTTP 요청을 보내면, 서버는 이 요청을 받아서...
+
+### Step 2: 미들웨어 처리
+요청이 들어오면 등록된 미들웨어를 순서대로 통과합니다...
+
+### Step 3: 핸들러 실행
+모든 미들웨어를 통과하면 최종적으로 핸들러가 실행됩니다...
+```
+
+- 복잡한 개념일수록 Step을 잘게 나눈다
+- 각 Step에는 **왜 이 단계가 필요한지** 한 줄 설명을 덧붙인다
+- 가능하면 흐름을 Mermaid 차트로도 시각화한다
+
+#### 용어설명 - Asterisk(*) 인라인 방식
+
+글 중간에 처음 등장하는 전문 용어는 asterisk와 함께 바로 설명한다:
+
+```markdown
+이때 *미들웨어(Middleware)*란 요청과 응답 사이에서 특정 처리를 수행하는 중간 소프트웨어를 말합니다.
+
+데이터를 *직렬화(Serialization)*하면 — 즉, 메모리 상의 객체를 저장/전송 가능한 형태로 변환하면 — 네트워크를 통해 전달할 수 있게 됩니다.
+```
+
+- 첫 등장 시에만 설명, 이후에는 용어만 사용
+- 영어 원어를 괄호 안에 병기
+- 설명은 한 문장 이내로 간결하게
+
+#### 다이어그램 — Mermaid 차트 필수
+
+모든 다이어그램, 플로우차트, 구조도는 **반드시 Mermaid 문법**으로 작성한다:
+
+```markdown
+\```mermaid
+flowchart LR
+    A[Client] -->|HTTP Request| B[Server]
+    B -->|Route Matching| C[Handler]
+    C -->|Response| A
+\```
+```
+
+- ASCII art, 텍스트 기반 다이어그램 사용 금지
+- 개념의 흐름, 구조, 관계를 시각화할 때 적극 활용
+- 차트 위에 간단한 설명 한 줄을 덧붙인다 (예: "전체 요청 흐름을 정리하면 다음과 같습니다:")
+
+#### 포스트 구성 순서
+
+```mermaid
+flowchart TD
+    A["도입부<br/>왜 이걸 공부하게 됐는지, 이 글에서 다룰 내용"] --> B["핵심 개념 설명<br/>Step by Step + 용어설명 + Mermaid 차트"]
+    B --> C["코드 예제<br/>실제로 돌려볼 수 있는 예제"]
+    C --> D["정리<br/>핵심 요약 (짧게)"]
+    D --> E["추가로 공부하면 좋을 개념<br/>관련된 심화/연관 주제"]
+```
+
 ### Content Structure Template
 
 ````markdown
@@ -301,47 +378,64 @@ tags: [tag1, tag2, tag3]
 published: true
 ---
 
-## Topic Introduction
+## 들어가며
 
-Brief overview of what this post covers and why it's important.
+이번 글에서는 ~에 대해 정리해보려고 합니다.
+(왜 이걸 공부하게 됐는지, 어떤 맥락에서 필요한 개념인지 짧게)
 
 ---
 
-## Main Section 1
+## 핵심 개념
 
-### Subsection
+(개념에 대한 개요. 첫 등장 용어는 *용어(English Term)* 형태로 인라인 설명)
 
-Content with examples...
-
-```code
-// Code examples
+```mermaid
+flowchart TD
+    A[개념A] --> B[개념B]
+    B --> C[결과]
 ```
 
 ---
 
-## Main Section 2
+## 동작 원리 (Step by Step)
 
-More detailed content...
+### Step 1: 첫 번째 단계
+설명...
+
+### Step 2: 두 번째 단계
+설명...
+
+### Step 3: 세 번째 단계
+설명...
 
 ---
 
-## Practical Examples
+## 코드로 살펴보기
 
-### Example 1
+실제로 돌려볼 수 있는 예제입니다.
 
-Real-world use case...
+```python
+# 예제 코드
+```
 
 ---
 
-## Summary
+## 정리
 
-Key takeaways from this post.
+이번 글에서 다룬 내용을 정리하면:
+- 핵심 포인트 1
+- 핵심 포인트 2
+- 핵심 포인트 3
 
-### Next Learning
+---
 
-- [Related Topic 1]
-- [Related Topic 2]
-- [Advanced Topic]
+## 추가로 공부하면 좋을 개념
+
+이 주제를 더 깊이 이해하려면 아래 개념들도 함께 살펴보면 좋습니다:
+
+- **관련 개념 1**: 한 줄 설명 + [링크]
+- **관련 개념 2**: 한 줄 설명 + [링크]
+- **심화 주제**: 한 줄 설명
 ````
 
 ### Cross-Linking Posts
@@ -415,6 +509,10 @@ Learn more about [Python Basics](/2025/10/11/python-basics.html)
 - Use English for code, technical terms, and proper nouns
 - Keep code examples well-commented
 - Use consistent heading hierarchy
+- 모든 다이어그램/차트는 Mermaid 문법으로 작성 (ASCII art 금지)
+- 전문 용어 첫 등장 시 *용어(English Term)* 인라인 설명 필수
+- 개념 설명은 반드시 Step by Step으로 구성
+- 글 말미에 "추가로 공부하면 좋을 개념" 섹션 포함
 
 ---
 
@@ -478,11 +576,12 @@ Learn more about [Python Basics](/2025/10/11/python-basics.html)
 
 ### For Technical Posts
 
-1. **Start with why**: Explain importance before diving into details
-2. **Show, don't just tell**: Include working code examples
-3. **Multiple examples**: Show different use cases
-4. **Explain complexity**: Include time/space complexity for algorithms
-5. **Link to next steps**: Guide readers to related topics
+1. **Step by Step 필수**: 개념 설명은 반드시 단계별로 풀어서 작성
+2. **Mermaid 차트 활용**: 흐름, 구조, 관계는 Mermaid로 시각화
+3. **용어는 인라인 설명**: 첫 등장 시 *용어(English)* 형태로 바로 풀어줌
+4. **코드는 돌려볼 수 있게**: 복붙해서 바로 실행 가능한 예제 포함
+5. **"추가로 공부하면 좋을 개념"**: 글 말미에 연관 심화 주제를 안내
+6. **블로그 톤 유지**: 교과서가 아니라 내가 정리한 글처럼 서술
 
 ### For Knowledge Management
 
@@ -567,9 +666,12 @@ make serve
 - ✅ Keep progress statistics current
 - ✅ Use consistent categories and tags
 - ✅ Always include `published: true` in post front matter
-- ✅ Write clear, educational content
-- ✅ Include practical code examples
-- ✅ Add "Next Learning" sections
+- ✅ **블로그 톤으로 작성** — 직접 배우고 정리한 느낌이 나도록
+- ✅ **Step by Step으로 개념 설명** — 단계별 풀이 필수
+- ✅ **Mermaid 차트 사용** — 모든 다이어그램은 Mermaid로
+- ✅ **용어 인라인 설명** — *용어(English)* 형태로 첫 등장 시 설명
+- ✅ **"추가로 공부하면 좋을 개념"** 섹션을 글 말미에 포함
+- ✅ Include practical, runnable code examples
 - ✅ Maintain responsive design
 - ✅ Follow established naming conventions
 
@@ -583,6 +685,10 @@ make serve
 - ❌ Ignore cross-referencing opportunities
 - ❌ Leave roadmaps outdated
 - ❌ Create posts without linking to roadmap
+- ❌ **교과서/문서 톤으로 작성** — 딱딱한 서술 금지
+- ❌ **ASCII art 다이어그램 사용** — 반드시 Mermaid 사용
+- ❌ **개념을 한 덩어리로 설명** — Step by Step 없이 나열 금지
+- ❌ **용어를 설명 없이 사용** — 첫 등장 시 인라인 설명 필수
 
 ---
 
@@ -600,7 +706,7 @@ This wiki aims to be:
 
 ## Last Updated
 
-This guide reflects the project structure as of October 2025.
+This guide reflects the project structure as of April 2026.
 
 **Current Status:**
 
