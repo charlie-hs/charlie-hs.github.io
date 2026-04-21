@@ -220,7 +220,27 @@ published: true
 
 ---
 
-## 11. 소프트 스킬
+## 11. AI 도구 활용
+
+### Claude Code 통합
+- [x] Claude Code MCP/Skills/Hooks 개념 이해 - [[Claude Code로 데이터 엔지니어링 워크플로우 통합하기](/ai-engineering/claude-code-for-data-engineers/)]
+- [ ] dbt Agent Skills 설정 및 활용
+- [ ] MCP Data Toolbox로 DB 연결
+- [ ] Airflow MCP 연동
+- [ ] OpenMetadata MCP로 영향 분석
+
+### 품질 자동화 (Hooks)
+- [ ] pytest PreCommit Hook 설정
+- [ ] sqlfluff SQL 린팅 Hook 설정
+- [ ] dbt test 자동 실행 Hook 설정
+
+### Docs-as-MCP
+- [ ] Context7 설정
+- [ ] gitingest 활용
+
+---
+
+## 12. 소프트 스킬
 
 ### 협업
 - [ ] 데이터 분석가와 협업
@@ -250,8 +270,9 @@ published: true
 | 컨테이너 | 0 | 7 | 0% |
 | 레이크하우스 | 0 | 8 | 0% |
 | 모니터링 | 0 | 8 | 0% |
+| AI 도구 활용 | 1 | 10 | 10% |
 | 소프트 스킬 | 0 | 8 | 0% |
-| **총계** | **0** | **121** | **0%** |
+| **총계** | **1** | **131** | **1%** |
 
 ---
 

@@ -304,6 +304,39 @@ published: true
 - **경험 기반 서술**: "이 개념은 실제로 ~할 때 유용합니다", "저도 처음에는 ~라고 생각했는데" 같은 표현 활용
 - **독백/회고 느낌**: 글 시작이나 중간에 "왜 이걸 공부하게 됐는지", "어디서 막혔는지" 짧게 언급
 
+#### AI 글쓰기 패턴 회피 (필수)
+
+블로그 포스트에서 다음 AI 특유 패턴을 반드시 피한다. ([Humanizer](https://github.com/blader/humanizer) 기반)
+
+**금지 어휘/표현:**
+- AI 과용 단어: "delve", "landscape", "tapestry", "testament", "pivotal", "crucial", "vibrant", "underscore", "foster", "garner", "showcase", "intricate", "enduring"
+- 과장 표현: "marking a pivotal moment", "serves as a testament", "vital role", "setting the stage for"
+- 홍보성 언어: "nestled", "groundbreaking", "breathtaking", "renowned", "must-visit"
+- 챗봇 잔재: "I hope this helps!", "Let me know if...", "Great question!"
+- 예고 문구: "Let's dive in", "Let's explore", "Here's what you need to know"
+- 필러: "In order to", "It is important to note that", "Due to the fact that"
+- 권위 트로프: "The real question is", "At its core", "In reality"
+
+**금지 구조/패턴:**
+- `is/are` 회피 금지: "serves as", "stands as" 대신 "~이다/~는" 직접 서술
+- 부정 병렬 구조: "It's not just X; it's Y" 패턴 사용 금지
+- 3의 법칙 강제: 무조건 3개씩 나열하지 말 것. 2개면 2개, 4개면 4개
+- 동의어 돌려쓰기: 같은 대상을 매번 다른 단어로 바꿔 부르지 말 것
+- 뻔한 긍정 결론: "The future looks bright", "Exciting times lie ahead" 금지
+- 헤딩 뒤 반복: 제목을 그대로 반복하는 첫 문장 금지
+- 과도한 헤징: "could potentially possibly be argued" 같은 다중 완화 표현 금지
+
+**스타일 규칙:**
+- em dash(—) 남용 금지: 쉼표나 마침표로 충분하면 그걸 쓸 것
+- 볼드체는 진짜 강조할 때만: 기계적으로 모든 키워드에 볼드 금지
+- `**헤더:** 내용` 식 인라인 헤더 리스트 지양
+- 모호한 출처 금지: "Experts argue", "Industry reports" 대신 구체적 출처 명시
+
+**자기 검증:**
+- 글 작성 후 "이 글이 왜 AI가 쓴 것처럼 보이는가?" 자문하고 해당 부분 수정
+- 문장 길이와 구조가 너무 균일하지 않은지 확인
+- 의견, 불확실성, 개인 경험이 적절히 섞여 있는지 확인
+
 #### Step by Step 설명 (필수)
 
 개념을 설명할 때는 **반드시 단계별로** 풀어서 설명한다:
@@ -689,6 +722,12 @@ make serve
 - ❌ **ASCII art 다이어그램 사용** — 반드시 Mermaid 사용
 - ❌ **개념을 한 덩어리로 설명** — Step by Step 없이 나열 금지
 - ❌ **용어를 설명 없이 사용** — 첫 등장 시 인라인 설명 필수
+- ❌ **AI 과용 단어 사용** — "delve", "landscape", "tapestry", "testament", "pivotal", "crucial" 등 금지
+- ❌ **"serves as", "stands as" 우회 표현** — 직접 "~이다"로 서술
+- ❌ **"It's not just X; it's Y" 패턴** — 부정 병렬 구조 금지
+- ❌ **3의 법칙 강제** — 무조건 3개씩 나열하지 말 것
+- ❌ **뻔한 긍정 결론** — "The future looks bright" 류 금지
+- ❌ **모호한 출처** — "Experts argue" 대신 구체적 출처 명시
 
 ---
 
