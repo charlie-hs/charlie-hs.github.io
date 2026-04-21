@@ -248,6 +248,46 @@ published: true
 - Computer architecture
 - Operating systems concepts
 
+### Career
+
+**Purpose:** 이력서, 포트폴리오, 면접 준비 등 개발자 커리어 전반
+
+**Characteristics:**
+
+- 이력서/포트폴리오 작성법
+- 면접 준비 전략
+- 커리어 전환 경험
+- 실제 사례 기반 Before/After 비교
+
+**Typical Content:**
+
+- PAAR 프레임워크 활용법
+- 기술 면접 대응 전략
+- 프로젝트 포트폴리오 구성법
+
+---
+
+## PAAR 사고방식 (기술 포스트 공통 적용)
+
+블로그의 모든 기술 포스트는 PAAR(Problem-Analyze-Action-Result) 사고방식이 자연스럽게 녹아들어야 합니다. 이력서나 포트폴리오에서만이 아니라, 기술을 공부하거나 적용해볼 때도 "왜 이걸 선택했는지"가 드러나야 합니다.
+
+### 기술 선택/비교 포스트에서
+
+기술을 소개하거나 비교할 때는 단순 나열이 아니라 의사결정 과정을 보여줍니다:
+
+- **Problem**: 어떤 상황에서 이 기술이 필요했는가?
+- **Analyze**: 어떤 대안들을 비교했고, 왜 이걸 선택했는가?
+- **Action**: 실제로 어떻게 적용했는가? 트레이드오프는?
+- **Result**: 적용 후 결과는? 수치가 있으면 수치로.
+
+### 개념 학습 포스트에서
+
+개념을 설명할 때도 "이 개념이 왜 필요한지(Problem)"와 "실무에서 어떤 판단에 활용되는지(Analyze)"를 포함합니다. 단순히 "X는 Y이다"가 아니라 "이런 상황에서 X를 쓰면 이런 문제를 해결할 수 있다"는 맥락을 제공합니다.
+
+### 포트폴리오와의 연결
+
+블로그 포스트 자체가 포트폴리오의 일부입니다. 기술 포스트에서 의사결정 과정을 잘 보여주면, 블로그 URL을 포트폴리오로 제출했을 때 "이 사람은 기술 선택의 근거를 생각하는 사람이다"라는 인상을 줄 수 있습니다.
+
 ---
 
 ## Writing New Posts
@@ -704,6 +744,7 @@ make serve
 - ✅ **Mermaid 차트 사용** — 모든 다이어그램은 Mermaid로
 - ✅ **용어 인라인 설명** — *용어(English)* 형태로 첫 등장 시 설명
 - ✅ **"추가로 공부하면 좋을 개념"** 섹션을 글 말미에 포함
+- ✅ **PAAR 사고방식 반영** — 기술 선택/비교 시 "왜 이걸 선택했는지" 의사결정 과정을 포함
 - ✅ Include practical, runnable code examples
 - ✅ Maintain responsive design
 - ✅ Follow established naming conventions
@@ -728,6 +769,7 @@ make serve
 - ❌ **3의 법칙 강제** — 무조건 3개씩 나열하지 말 것
 - ❌ **뻔한 긍정 결론** — "The future looks bright" 류 금지
 - ❌ **모호한 출처** — "Experts argue" 대신 구체적 출처 명시
+- ❌ **기술 선택 근거 없이 나열** — "X를 사용했다"만 쓰지 말고, 왜 X를 선택했는지 Analyze 포함
 
 ---
 
