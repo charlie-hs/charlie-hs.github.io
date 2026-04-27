@@ -50,13 +50,13 @@ Stuart Russell과 Peter Norvig은 교과서 *AIMA*에서 AI 정의를 **2축 × 
 
 ```mermaid
 quadrantChart
-    title AI를 정의하는 4가지 관점 (Russell & Norvig)
-    x-axis "행동 중심" --> "사고 중심"
-    y-axis "이성적(rational)" --> "사람처럼(human-like)"
-    quadrant-1 "사람처럼 생각: 인지 모델링"
-    quadrant-2 "사람처럼 행동: 튜링 테스트"
-    quadrant-3 "이성적으로 행동: 합리적 에이전트"
-    quadrant-4 "이성적으로 생각: 논리·사고법칙"
+    title AI를 정의하는 4가지 관점
+    x-axis 행동 중심 --> 사고 중심
+    y-axis 이성적 --> 사람처럼
+    quadrant-1 사람처럼 생각하기 — 인지 모델링
+    quadrant-2 사람처럼 행동하기 — 튜링 테스트
+    quadrant-3 이성적으로 행동하기 — 합리적 에이전트
+    quadrant-4 이성적으로 생각하기 — 논리·사고 법칙
 ```
 
 각 칸의 의미:
@@ -178,23 +178,23 @@ graph LR
 
 ```mermaid
 timeline
-    title 인공지능 발전사 (1943~2020)
-    1943 : 맥클록·피츠 인공 뉴런 모델
+    title 인공지능 발전사 1943-2020
+    1943 : 맥클록-피츠 인공 뉴런 모델
     1950 : 튜링 테스트 발표 (Mind 저널)
-    1955 : 다트머스 워크숍 제안서 ("AI" 용어 등장)
+    1955 : 다트머스 워크숍 제안서 (AI 용어 등장)
     1956 : 다트머스 워크숍 개최
     1958 : 로젠블랫 퍼셉트론 (Psychological Review)
-    1969 : Minsky·Papert 'Perceptrons' 책
-    1970s~80s : 1차 AI 겨울 (전문가 시스템 융성·쇠퇴)
-    1986 : Rumelhart·Hinton·Williams 역전파 (Nature)
-    1997 : IBM Deep Blue, Kasparov 격파
-    2006 : Hinton et al. DBN, 딥오토인코더 (Science·Neural Comp.)
+    1969 : Minsky-Papert Perceptrons 책 출간
+    1970s : 1차 AI 겨울 시작
+    1986 : Rumelhart-Hinton-Williams 역전파 (Nature)
+    1997 : IBM Deep Blue Kasparov 격파
+    2006 : Hinton 등 DBN 등장 (딥러닝 부활)
     2012 : AlexNet ImageNet 우승 (NIPS)
-    2014 : Goodfellow GAN
-    2016 : AlphaGo vs 이세돌 (Nature 논문 + 공개 대국)
-    2017 : Vaswani et al. Transformer
-    2018 : Devlin et al. BERT
-    2020 : Brown et al. GPT-3 (175B 파라미터)
+    2014 : Goodfellow GAN 발표
+    2016 : AlphaGo vs 이세돌 4-1
+    2017 : Vaswani 등 Transformer (Attention Is All You Need)
+    2018 : Devlin 등 BERT
+    2020 : Brown 등 GPT-3 (1750억 파라미터)
 ```
 
 ### 5.2 핵심 사건 정리 (출처 포함)
@@ -331,10 +331,10 @@ flowchart LR
 
 ```mermaid
 graph TB
-    A["단순 반응 에이전트<br/>(Simple reflex)<br/>현재 지각만 보고 행동"] --> B["모델 기반 반응 에이전트<br/>(Model-based reflex)<br/>내부 상태 + 세계 모델"]
-    B --> C["목표 기반 에이전트<br/>(Goal-based)<br/>'무엇을 달성하려는가'"]
-    C --> D["효용 기반 에이전트<br/>(Utility-based)<br/>'얼마나 만족스러운가'"]
-    D --> E["학습 에이전트<br/>(Learning)<br/>경험으로 자기 개선"]
+    A["단순 반응 에이전트<br/>Simple reflex<br/>현재 지각만 보고 행동"] --> B["모델 기반 반응 에이전트<br/>Model-based reflex<br/>내부 상태와 세계 모델 보유"]
+    B --> C["목표 기반 에이전트<br/>Goal-based<br/>달성할 목표 표현"]
+    C --> D["효용 기반 에이전트<br/>Utility-based<br/>결과의 만족도 비교"]
+    D --> E["학습 에이전트<br/>Learning<br/>경험으로 자기 개선"]
 ```
 
 순서대로 갈수록 **유연성**과 **자율성**이 증가한다. 최신 AI 시스템은 대부분 **학습 에이전트** 범주에 속한다.

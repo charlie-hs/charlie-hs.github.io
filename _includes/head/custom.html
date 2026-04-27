@@ -67,28 +67,73 @@
 }
 </script>
 
-<!-- Mermaid diagram support -->
+<!-- Mermaid diagram support (kramdown + Rouge compatible) -->
 <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-  // kramdown wraps code blocks as <pre><code class="language-mermaid">...</code></pre>
-  // mermaid.run() expects <div class="mermaid">...</div>, so we transform first.
-  document.addEventListener('DOMContentLoaded', () => {
-    const codeBlocks = document.querySelectorAll('pre > code.language-mermaid');
-    codeBlocks.forEach((codeBlock) => {
-      const pre = codeBlock.parentElement;
-      const div = document.createElement('div');
-      div.className = 'mermaid';
-      // Use innerText to preserve newlines but strip HTML
-      div.textContent = codeBlock.innerText;
-      pre.replaceWith(div);
+  function transformMermaidBlocks() {
+    /*
+     * kramdown + Rouge wraps fenced code blocks like this:
+     *
+     *   <div class="language-mermaid highlighter-rouge">
+     *     <div class="highlight">
+     *       <pre class="highlight"><code>...diagram source...</code></pre>
+     *     </div>
+     *   </div>
+     *
+     * Mermaid expects the source to live inside <div class="mermaid">.
+     * We replace each container in place.
+     */
+    const containers = document.querySelectorAll('div.language-mermaid');
+    let count = 0;
+    containers.forEach((container) => {
+      const codeEl = container.querySelector('code');
+      if (!codeEl) return;
+      const source = codeEl.innerText;
+      const target = document.createElement('div');
+      target.className = 'mermaid';
+      target.textContent = source;
+      container.replaceWith(target);
+      count += 1;
     });
+
+    // Fallback: also handle <pre><code class="language-mermaid"> if any post happens to use it
+    document.querySelectorAll('pre > code.language-mermaid').forEach((codeEl) => {
+      const pre = codeEl.parentElement;
+      const target = document.createElement('div');
+      target.className = 'mermaid';
+      target.textContent = codeEl.innerText;
+      pre.replaceWith(target);
+      count += 1;
+    });
+
+    if (window.console) {
+      console.log('[mermaid] transformed', count, 'block(s)');
+    }
+    return count;
+  }
+
+  function init() {
+    const transformed = transformMermaidBlocks();
+    if (transformed === 0) return;
 
     mermaid.initialize({
-      startOnLoad: true,
+      startOnLoad: false,
       theme: 'default',
       securityLevel: 'loose',
+      flowchart: { htmlLabels: true },
     });
-    mermaid.run();
-  });
+
+    mermaid.run({ querySelector: '.mermaid' }).catch((err) => {
+      if (window.console) {
+        console.error('[mermaid] render error:', err);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 </script>
