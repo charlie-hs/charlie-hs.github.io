@@ -66,3 +66,29 @@
   "knowsAbout": ["컴퓨터공학", "데이터엔지니어링", "인공지능", "백엔드개발"]
 }
 </script>
+
+<!-- Mermaid diagram support -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+  // kramdown wraps code blocks as <pre><code class="language-mermaid">...</code></pre>
+  // mermaid.run() expects <div class="mermaid">...</div>, so we transform first.
+  document.addEventListener('DOMContentLoaded', () => {
+    const codeBlocks = document.querySelectorAll('pre > code.language-mermaid');
+    codeBlocks.forEach((codeBlock) => {
+      const pre = codeBlock.parentElement;
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      // Use innerText to preserve newlines but strip HTML
+      div.textContent = codeBlock.innerText;
+      pre.replaceWith(div);
+    });
+
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'default',
+      securityLevel: 'loose',
+    });
+    mermaid.run();
+  });
+</script>
