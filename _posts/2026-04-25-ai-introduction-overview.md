@@ -14,6 +14,8 @@ toc: true
 toc_sticky: true
 ---
 
+![인간과 로봇이 신경망으로 연결된 모습](/assets/images/ai-introduction/human_vs_robot.png)
+
 > **이 글의 목적**
 >
 > 인공지능이라는 용어를 처음 접하는 사람부터 KODIT 필기를 준비하는 사람까지, **한 번에 토대를 잡을 수 있도록** 정리한 글이다.
@@ -77,6 +79,8 @@ quadrantChart
 - **출처**: Alan M. Turing, *"Computing Machinery and Intelligence"*, **Mind**, vol. LIX, no. 236, pp. 433–460, **October 1950**[^3]
 
 이 논문은 *"Can machines think?"* 라는 질문으로 시작한다. 튜링은 이 질문이 모호하다며, 대신 **모방 게임(Imitation Game)** 이라는 절차적 테스트로 대체할 것을 제안한다.
+
+![튜링 테스트(모방 게임)의 구성을 묘사한 1950년대풍 일러스트](/assets/images/ai-introduction/turing_test.png)
 
 ### 2.2 원래 모방 게임의 구성
 
@@ -236,6 +240,8 @@ timeline
 
 용어가 자주 혼용되지만 **포함 관계**다.
 
+![인공지능, 기계학습, 딥러닝의 포함 관계를 보여주는 동심원 다이어그램](/assets/images/ai-introduction/concentric_diagram.png)
+
 ```mermaid
 graph TB
     AI["인공지능 (Artificial Intelligence)<br/>지능적 행동을 하는 모든 시스템"]
@@ -278,6 +284,8 @@ graph TB
 ## 7. 지능형 에이전트 (Intelligent Agent)
 
 AIMA가 강조하는 핵심 추상화. AI를 *"환경과 상호작용하며 합리적으로 행동하는 실체"* 로 보는 관점이다.
+
+![에이전트가 센서와 액튜에이터로 환경과 상호작용하는 모습](/assets/images/ai-introduction/agent_environment.png)
 
 ### 7.1 에이전트-환경 상호작용
 
@@ -475,11 +483,13 @@ KODIT 시험에는 *"학계의 단일 합의는 없다"* 가 정답.
 
 ---
 
-## 부록 A: 이미지 생성 프롬프트 (다이어그램으로 표현 어려운 경우 참고)
+## 부록 A: 이미지 생성 프롬프트
 
-> 본문에 굳이 이미지를 추가할 필요는 없으나, 시각적 보강이 필요하다면 아래 프롬프트로 이미지 생성 가능 (Midjourney, DALL·E, Stable Diffusion 등).
+> 본문에 사용된 이미지들의 생성 프롬프트를 기록해둔다. 추후 재생성·수정·재사용 시 참고.
 
-### A1. Hero 이미지 (포스트 상단용)
+### A1. Hero 이미지 (포스트 상단 — `human_vs_robot.png`)
+
+> 📁 저장 경로: `/assets/images/ai-introduction/human_vs_robot.png`
 
 ```
 Minimalist isometric illustration depicting the concept of artificial intelligence:
@@ -487,47 +497,70 @@ a stylized human silhouette on the left mirrored by a geometric robotic silhouet
 on the right, both connected by a luminous bidirectional arrow with subtle neural
 network nodes flowing between them. Soft pastel color palette (sky blue, warm
 beige, charcoal accents). Clean white background. Vector flat design, 16:9 aspect
-ratio. No text overlay.
+ratio.
+
+CRITICAL: 이미지 내 모든 문자/라벨은 반드시 한글(Hangul)로 표시. 영문 텍스트 금지.
+라벨: 사람 실루엣 아래 "사람", 로봇 실루엣 아래 "기계", 가운데 화살표 위 "지능".
 ```
 
-### A2. 튜링 테스트 시각화
+### A2. 튜링 테스트 시각화 (`turing_test.png`)
+
+> 📁 저장 경로: `/assets/images/ai-introduction/turing_test.png`
 
 ```
 Editorial illustration of the Turing Test (Imitation Game) in a 1950s scientific
 aesthetic: a human interrogator sitting at a vintage typewriter terminal in the
-center, with two opaque doors labeled A and B behind a curtain. Behind one door
-is a silhouetted human figure, behind the other a vintage room-sized computer
-with vacuum tubes. Speech bubbles in monospace font show typed messages. Muted
-sepia and slate-blue palette. Flat editorial illustration style. 16:9.
+center, with two opaque doors behind a curtain. Behind one door is a silhouetted
+human figure, behind the other a vintage room-sized computer with vacuum tubes.
+Speech bubbles in monospace font show typed messages. Muted sepia and slate-blue
+palette. Flat editorial illustration style. 16:9.
+
+CRITICAL: 이미지 내 모든 문자/라벨은 반드시 한글로 표시. 영문 텍스트 금지.
+라벨: 두 문에 각각 "A"와 "B" (단일 문자라 그대로 유지 가능), 심문관 옆에 "심문관 C",
+한쪽에 "사람", 반대쪽에 "기계", 말풍선 안 메시지는 한국어로 (예: "당신은 사람입니까?").
 ```
 
-### A3. 지능형 에이전트와 환경 (PEAS)
+### A3. 지능형 에이전트와 환경 (PEAS) (`agent_environment.png`)
+
+> 📁 저장 경로: `/assets/images/ai-introduction/agent_environment.png`
 
 ```
 Diagram-style illustration of an intelligent agent interacting with an
 environment. Left half: a stylized robotic agent with clearly labeled components
-(sensors as eye/microphone icons at top, "agent function" as a brain-shaped
+(sensors as eye/microphone icons at top, an agent function as a brain-shaped
 box in the middle, actuators as gear/arm icons at bottom). Right half: an
 environment scene (city street with cars, pedestrians, traffic lights). Two
-bidirectional arrows between them, one labeled "percepts" and the other
-"actions". Clean infographic style, blue and orange accent colors, white
-background. 16:9.
+bidirectional arrows between them. Clean infographic style, blue and orange
+accent colors, white background. 16:9.
+
+CRITICAL: 이미지 내 모든 문자/라벨은 반드시 한글로 표시. 영문 텍스트 금지.
+라벨: 위 "센서", 가운데 "에이전트 함수", 아래 "액튜에이터", 오른쪽 영역 "환경",
+두 화살표에 각각 "지각 (percept)"과 "행동 (action)" — 괄호 안 영문은 보조 표기.
 ```
 
-### A4. AI ⊃ ML ⊃ DL 동심원
+### A4. AI ⊃ ML ⊃ DL 동심원 (`concentric_diagram.png`)
+
+> 📁 저장 경로: `/assets/images/ai-introduction/concentric_diagram.png`
 
 ```
 Clean concentric circle Venn diagram showing three nested layers: outermost
-labeled "Artificial Intelligence" in dark blue, middle labeled "Machine
-Learning" in medium blue, innermost labeled "Deep Learning" in bright cyan.
-Each ring annotated with example techniques in small clean sans-serif text:
-outer ring "expert systems, search, logic", middle ring "regression,
-SVM, k-means", inner ring "CNN, RNN, Transformer". Minimalist, infographic
-style, white background. Square aspect ratio.
+in dark blue, middle in medium blue, innermost in bright cyan. Each ring
+annotated with example techniques in small clean sans-serif text. Minimalist
+infographic style, white background. Square aspect ratio.
+
+CRITICAL: 이미지 내 모든 문자/라벨은 반드시 한글로 표시. 영문 텍스트 금지
+(단, 표준 기술 약어 CNN, RNN, SVM, Transformer 등은 영문 그대로 유지 가능).
+라벨:
+- 가장 바깥 원: "인공지능 (AI)"
+- 중간 원: "기계학습 (ML)"
+- 가장 안쪽 원: "딥러닝 (DL)"
+- 바깥 원의 예시 기법: "전문가 시스템, 탐색, 논리"
+- 중간 원: "회귀, SVM, 군집화"
+- 안쪽 원: "CNN, RNN, Transformer"
 ```
 
 > 💡 위 프롬프트는 모두 **본문 텍스트에 의존하지 않는 자기 완결형** 이미지를 만들도록 작성되었다. 본문이 변경되어도 이미지는 의미가 유지된다.
 
 ---
 
-> ✍️ **다음 학습**: [AI개론 ②] 탐색 알고리즘 (BFS / DFS / UCS / A* / 미니맥스) — D-11 (4/28) 작성 예정.
+> ✍️ **다음 학습**: [[AI개론 ②] 탐색 알고리즘 (BFS · DFS · UCS · A* · 미니맥스)](/ai/ai-introduction-search-algorithms/) — 작성 완료.
